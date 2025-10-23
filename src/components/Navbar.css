@@ -1,0 +1,91 @@
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 2rem;
+  background-color: transparent; /* Transparent background */
+  position: relative;
+  z-index: 1000;
+  flex-wrap: wrap;
+}
+
+/* Brand and logo */
+.navbar .brand {
+  display: flex;
+  align-items: center;
+}
+
+.navbar .brand .logo {
+  width: 40px;
+  height: 40px;
+  margin-right: 8px;
+}
+
+/* Nav links */
+.navbar .nav-links {
+  display: flex;
+  gap: 1.5rem;
+}
+
+.navbar .nav-links a {
+  color: #fff;
+  text-decoration: none;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  position: relative;
+}
+
+.navbar .nav-links a .icon {
+  margin-right: 6px;
+}
+
+/* Cart badge */
+.cart-badge {
+  background-color: #e74c3c;
+  color: #fff;
+  font-size: 0.7rem;
+  font-weight: bold;
+  padding: 0.2rem 0.4rem;
+  border-radius: 50%;
+  position: absolute;
+  top: -8px;
+  right: -10px;
+}
+
+/* Hamburger toggle (mobile) */
+.navbar-actions .menu-toggle {
+  display: none; /* Hidden by default */
+  background: none;
+  border: none;
+  color: #fff;
+  font-size: 1.5rem;
+  cursor: pointer;
+}
+
+/* Mobile responsive */
+@media (max-width: 768px) {
+  .navbar .nav-links {
+    position: fixed;
+    top: 0;
+    right: -100%;
+    width: 220px;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.85); /* Semi-transparent overlay */
+    flex-direction: column;
+    padding-top: 5rem;
+    gap: 1.5rem;
+    transition: right 0.3s ease;
+  }
+
+  .navbar .nav-links.active {
+    right: 0;
+  }
+
+  .navbar-actions .menu-toggle {
+    display: block;
+    position: absolute;
+    right: 0.3rem; /* Align to the right */
+    top: 1.5rem;
+  }
+}

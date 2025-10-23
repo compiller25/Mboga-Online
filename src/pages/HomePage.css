@@ -1,0 +1,150 @@
+/* Homepage global page styles */
+.page {
+  max-width: 1000px;
+  margin: 2rem auto;
+  padding: 1rem;
+  font-family: Arial, sans-serif;
+
+  /* Background image */
+  background-image: url("/images/hp-bg.jpg"); /* <- your image path */
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  position: relative;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 3px 15px rgba(0,0,0,0.1);
+}
+
+/* Add a dark overlay to improve readability */
+.page::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0,0,0,0.3); /* adjust opacity for darkness */
+  z-index: 0;
+  border-radius: 12px;
+}
+
+/* Make all child elements appear above overlay */
+.page * {
+  position: relative;
+  z-index: 1;
+}
+
+/* Headings and paragraphs */
+.page h1 {
+  color: #fff;
+  margin-bottom: 0.5rem;
+}
+
+.page p {
+  margin-bottom: 2rem;
+  color: #f0f0f0;
+}
+
+/* Vegetable grid */
+.veg-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 1.5rem;
+}
+
+/* Vegetable cards */
+.veg-card {
+  background-color: rgba(58, 84, 11, 0.214); /* slight transparency to show bg */
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 3px 10px rgba(0,0,0,0.15);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  padding: 10px;
+}
+
+.veg-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 7px 15px rgba(0,0,0,0.2);
+}
+
+.veg-card img {
+  width: 100%;
+  height: 150px;
+  object-fit: cover;
+  border-radius: 8px;
+}
+
+.veg-card h3 {
+  margin: 0.5rem 0;
+  color: #27ae60;
+}
+
+.veg-card p {
+  margin: 0.25rem 0 0.5rem 0;
+  font-weight: bold;
+}
+
+.veg-card button {
+  background-color: #1abc9c;
+  border: none;
+  color: #fff;
+  padding: 0.5rem 1rem;
+  border-radius: 6px;
+  cursor: pointer;
+  font-weight: bold;
+  margin-top: 5px;
+  transition: background-color 0.2s ease;
+}
+
+.veg-card button:hover {
+  background-color: #16a085;
+}
+
+.veg-card button.added-btn {
+  background-color: #4caf50 !important;
+  color: white;
+}
+
+.quantity-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  margin-top: 5px;
+}
+
+.veg-card input[type="number"] {
+  width: 60px;
+  padding: 5px;
+  font-size: 14px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  text-align: center;
+  outline: none;
+  transition: border-color 0.2s, box-shadow 0.2s;
+}
+
+.veg-card input[type="number"]:focus {
+  border-color: #2196f3;
+  box-shadow: 0 0 5px rgba(33, 150, 243, 0.5);
+}
+
+/* Responsive adjustments */
+@media (max-width: 600px) {
+  .veg-card img {
+    height: 120px;
+  }
+  .veg-card input[type="number"] {
+    width: 50px;
+    font-size: 13px;
+  }
+  .veg-card button {
+    padding: 0.4rem 0.8rem;
+    font-size: 13px;
+  }
+}
