@@ -36,6 +36,6 @@ const buttonStyle = {
   cursor: "pointer",
   marginLeft: "1rem",
   fontWeight: "bold",
-  backgroundColor: "#1abc9c",
+  backgroundColor: "#be0ea7ff",
   color: "#fff",
 };

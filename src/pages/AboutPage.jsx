@@ -1,6 +1,8 @@
 import { useState } from "react";
 import "./AboutPage.css";
 
+const BASE_PATH = "/Mboga-Online"; // <-- Add your repo name here
+
 export default function AboutPage() {
   const [submitted, setSubmitted] = useState(false);
   const [whatsAppLink, setWhatsAppLink] = useState("");
@@ -14,18 +16,14 @@ export default function AboutPage() {
     e.preventDefault();
     setSubmitted(true);
 
-    // Generate WhatsApp link with the message
     const phoneNumber = "255710379610"; // Your WhatsApp number
     const text = `Hello, my name is ${formData.name}. My email is ${formData.email}. Message: ${formData.message}`;
     const encodedText = encodeURIComponent(text);
     setWhatsAppLink(`https://wa.me/${phoneNumber}?text=${encodedText}`);
 
-    setFormData({ name: "", email: "", message: "" }); // reset fields
+    setFormData({ name: "", email: "", message: "" });
 
-    // hide success message after 5 seconds
-    setTimeout(() => {
-      setSubmitted(false);
-    }, 5000);
+    setTimeout(() => setSubmitted(false), 5000);
   };
 
   return (
@@ -104,16 +102,16 @@ export default function AboutPage() {
         <h3>Follow Us</h3>
         <div className="icons">
           <a href="https://wa.me/255757808854" target="_blank" rel="noreferrer">
-            <img src="/icons/wat.jpeg" alt="Whatsapp" />
-            </a>
+            <img src={`${BASE_PATH}/icons/wat.jpeg`} alt="Whatsapp" />
+          </a>
           <a href="https://instagram.com/yourpage" target="_blank" rel="noreferrer">
-            <img src="/icons/insta.png" alt="Instagram" />
+            <img src={`${BASE_PATH}/icons/insta.png`} alt="Instagram" />
           </a>
           <a href="https://tiktok.com/@yourpage" target="_blank" rel="noreferrer">
-            <img src="/icons/tiktok.jpeg" alt="TikTok" />
+            <img src={`${BASE_PATH}/icons/tiktok.jpeg`} alt="TikTok" />
           </a>
           <a href="https://x.com/yourpage" target="_blank" rel="noreferrer">
-            <img src="/icons/x.jpeg" alt="X" />
+            <img src={`${BASE_PATH}/icons/x.jpeg`} alt="X" />
           </a>
         </div>
       </div>

@@ -5,6 +5,8 @@ import DarkModeToggle from "./DarkModeToggle";
 import { FaHome, FaInfoCircle, FaShoppingCart, FaCreditCard, FaBars, FaTimes } from "react-icons/fa";
 import "./Navbar.css";
 
+const BASE_PATH = "/Mboga-Online"; // <-- Add your repo name here
+
 export default function Navbar() {
   const cart = useStore((state) => state.cart);
   const [menuOpen, setMenuOpen] = useState(false);
@@ -14,7 +16,7 @@ export default function Navbar() {
   return (
     <nav className="navbar">
       <div className="brand">
-        <img src="/logo.png" alt="Logo" className="logo" />
+        <img src={`${BASE_PATH}/logo.png`} alt="Logo" className="logo" />
         <Link to="/">Mboga Online</Link>
       </div>
 

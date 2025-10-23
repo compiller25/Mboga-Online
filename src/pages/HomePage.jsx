@@ -2,18 +2,20 @@ import useStore from "../store";
 import { useState, useEffect } from "react";
 import "./HomePage.css";
 
+const BASE_PATH = "/Mboga-Online"; // <-- Add your repo name here
+
 const vegetables = [
-  { id: 1, name: "Mchicha", price: 500, img: "/images/Spinach.jpg", isGreen: true },
-  { id: 2, name: "Tembele", price: 500, img: "/images/Tembele.jpg", isGreen: true },
-  { id: 3, name: "Mnavuu", price: 500, img: "/images/mnavu.jpeg", isGreen: true },
-  { id: 4, name: "Figiri", price: 500, img: "/images/figiri.jpg", isGreen: true },
-  { id: 5, name: "Chinnesse", price: 500, img: "/images/chinnese.jpeg", isGreen: true },
-  { id: 6, name: "Majani ya Maboga", price: 500, img: "/images/maboga.jpeg", isGreen: true },
-  { id: 7, name: "Pilipili", price: 100, img: "/images/pepper.jpeg", isGreen: false },
-  { id: 8, name: "Hoho", price: 200, img: "/images/hoho.jpeg", isGreen: false },
-  { id: 9, name: "Karoti", price: 200, img: "/images/karoti.jpeg", isGreen: false },
-  { id: 10, name: "Nyanya", price: 200, img: "/images/tomato.jpg", isGreen: false },
-  { id: 11, name: "Vitunguu", price: 200, img: "/images/onion.jpg", isGreen: false },
+  { id: 1, name: "Mchicha", price: 500, img: `${BASE_PATH}/images/Spinach.jpg`, isGreen: true },
+  { id: 2, name: "Tembele", price: 500, img: `${BASE_PATH}/images/Tembele.jpg`, isGreen: true },
+  { id: 3, name: "Mnavuu", price: 500, img: `${BASE_PATH}/images/mnavu.jpeg`, isGreen: true },
+  { id: 4, name: "Figiri", price: 500, img: `${BASE_PATH}/images/figiri.jpg`, isGreen: true },
+  { id: 5, name: "Chinnesse", price: 500, img: `${BASE_PATH}/images/chinnese.jpeg`, isGreen: true },
+  { id: 6, name: "Majani ya Maboga", price: 500, img: `${BASE_PATH}/images/maboga.jpeg`, isGreen: true },
+  { id: 7, name: "Pilipili", price: 100, img: `${BASE_PATH}/images/pepper.jpeg`, isGreen: false },
+  { id: 8, name: "Hoho", price: 200, img: `${BASE_PATH}/images/hoho.jpeg`, isGreen: false },
+  { id: 9, name: "Karoti", price: 200, img: `${BASE_PATH}/images/karoti.jpeg`, isGreen: false },
+  { id: 10, name: "Nyanya", price: 200, img: `${BASE_PATH}/images/tomato.jpg`, isGreen: false },
+  { id: 11, name: "Vitunguu", price: 200, img: `${BASE_PATH}/images/onion.jpg`, isGreen: false },
 ];
 
 export default function HomePage() {
